@@ -12,7 +12,7 @@ public class SampleJobServiceImpl implements SampleJobService {
 	public void executeSampleJob() {
 		 logger.info("The sample job has begun...");
         try {
-            Thread.sleep(50000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             logger.error("Error while executing sample job", e);
         } finally {
