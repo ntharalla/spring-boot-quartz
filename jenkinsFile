@@ -4,7 +4,7 @@ pipeline {
         stage('Static Analysis') {
             steps {
                 echo 'Run the static analysis to the code' 
-                    withSonarQubeEnv(sonarqube') {
+                    withSonarQubeEnv('sonarqube') {
                         bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
                     }
             }
