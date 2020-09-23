@@ -4,6 +4,10 @@ pipeline {
         stage('Static Analysis') {
             steps {
                 echo 'Run the static analysis to the code' 
+                mvn clean package sonar:sonar \
+                      -Dsonar.projectKey=MyTest \
+                      -Dsonar.host.url=http://localhost:9123 \
+                      -Dsonar.login=343f3df8526e64dae4ab866d2202a91b7cd6c504
             }
         }
         stage('Compile') {
