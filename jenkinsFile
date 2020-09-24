@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Run the static analysis to the code' 
                     withSonarQubeEnv('sonarqube') {
-                        bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+                        bat 'mvn clean compile sonar:sonar -Dsonar.projectKey=MyTest -Dsonar.host.url=http://localhost:9123 -Dsonar.login=91edae0880ab7f4222e4b60ac9cf3eed0ce9bdff'
                     }
             }
         }
